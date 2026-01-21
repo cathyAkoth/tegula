@@ -103,3 +103,22 @@ faders.forEach(fader => {
   appearOnScroll.observe(fader);
 });
 
+// Highlight active menu link (robust)
+const path = window.location.pathname.toLowerCase();
+
+document.querySelectorAll(".menu a").forEach(link => {
+  const href = link.getAttribute("href");
+
+  if (!href || href === "#") return;
+
+  // Normalize both sides
+  const linkPath = href.toLowerCase();
+
+  if (
+    path.endsWith(linkPath) ||
+    (path === "/" && linkPath === "index.html")
+  ) {
+    link.classList.add("active");
+  }
+});
+

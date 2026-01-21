@@ -1,31 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us – Tegula Real Properties limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-<header>
-  <div class="container row">
-    <h1>Contact Us</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="properties.html">Properties</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
 
-<section class="container">
-  <form class="card">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Message"></textarea>
-    <button>Send Message</button>
-  </form>
-</section>
+  <!-- Header -->
+  <header class="header">
+    <div class="nav">
+      <div class="logo">Tegula Real Properties limited</div>
 
-<footer>© 2026 City Mark Services</footer>
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-mega">
+          <a href="#">Find Property</a>
+          <div class="mega">
+            <div>
+              <h4>Residential</h4>
+              <a href="#">Homes for Sale</a>
+              <a href="#">Homes for Rent</a>
+              <a href="#">New Developments</a>
+            </div>
+            <div>
+              <h4>Commercial</h4>
+              <a href="#">Offices</a>
+              <a href="#">Retail</a>
+              <a href="#">Industrial</a>
+            </div>
+          </div>
+        </li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a href="#"  class="contact-btn">
+    <img src="https://img.icons8.com/ios-filled/24/ffffff/phone.png" alt="Call Icon" />
+   0393 191779
+  </a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero about-hero">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>We are here to help you with all your property needs</p>
+    </div>
+  </section>
+
+  <!-- Contact Intro -->
+  <section class="section fade-slide center">
+    <h2>Get in Touch</h2>
+    <p>
+      Whether you are buying, selling, renting, or investing, our team is ready to assist you.
+      Reach out to us today and let Tegula Real Estate guide you.
+    </p>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="section muted fade-slide">
+    <div class="grid-3">
+      <!-- Contact Details -->
+      <div class="service-card">
+        <h3>Our Office</h3>
+        <p><strong>Location:</strong> Kyengera, opposite CPS Poweza</p>
+        <p><strong>Phone:</strong> +256 757 898 118 / 0393 101 779</p>
+        <p><strong>Email:</strong> info@tegularealprooerties.com</p>
+        <p>Open Monday – Friday<br/>8:00 AM – 5:00 PM</p>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="service-card" style="grid-column: span 2;">
+        <h3>Send Us a Message</h3>
+        <form class="contact-form">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+          </div>
+          <input type="text" placeholder="Phone Number" style="margin-top:16px;width:100%;" />
+          <textarea placeholder="Your Message" rows="5" style="margin-top:16px;width:100%;"></textarea>
+          <button type="submit" style="
+            margin-top:16px;
+            padding:12px 28px;
+            background:var(--accent);
+            border:none;
+            border-radius:30px;
+            font-weight:600;
+            cursor:pointer;
+          ">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="section fade-slide">
+    <h2 class="center">Find Us</h2>
+    <p class="center">Kyengera, opposite CPS Poweza</p>
+    <div style="max-width:1200px;margin:30px auto 0;overflow:hidden;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.12)">
+      <iframe
+        src="https://www.google.com/maps?q=Kyengera%20CPS%20Poweza&output=embed"
+        width="100%"
+        height="420"
+        style="border:0"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+    </div>
+    <div style="text-align:center;margin-top:20px">
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Kyengera%20CPS%20Poweza"
+         target="_blank"
+         style="display:inline-block;padding:14px 28px;background:var(--accent);color:#000;font-weight:600;border-radius:30px;box-shadow:0 10px 20px rgba(0,0,0,.15)">
+        Get Directions
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Tegula Real Properties limited</h3>
+        <p>Your trusted partner in residential & commercial property across Uganda.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-icons">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Tegula Real Estate. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/256757898118" target="_blank" class="whatsapp-float">
+    <img src="https://img.icons8.com/ios-filled/32/ffffff/whatsapp.png" alt="WhatsApp">
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
