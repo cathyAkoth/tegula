@@ -1,10 +1,10 @@
 :root{
-  --primary:#161E54;
-  --accent:#F16D34;
+  --primary:#005096;
+  --accent:#FA8C00;
   --light:#ffffff;
   --muted:#eef6fd;
   --text:#1e1e1e;
-  --sky:#77BEF0;
+  --sky:#32B4FA;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,7 +19,7 @@ img{display:block;max-width:100%}
 .container{max-width:1200px;margin:auto}
 
 h2{
-  color: #F16D34;
+  color: #FA8C00;
 }
 
 /* Top Bar */
@@ -41,12 +41,35 @@ h2{
 
 /* Header Navigation */
 .nav {
+  height: 80px;                 /* ← CONTROL NAV HEIGHT HERE */
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Keep logo left, menu right */
-  padding: 16px 40px;
-  position: relative;
+  justify-content: space-between;
+  padding: 0 40px;   
 }
+
+.logo,
+.logo a,
+.logo img {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-height: 70px;             /* MUST be smaller than nav height */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+
 
 /* Center the menu items */
 .menu {
@@ -201,6 +224,19 @@ h2{
   margin: 10px auto 0;
   border-radius: 2px;
 }
+.about-text {
+  max-width: 900px;
+  margin: 0 auto 24px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.highlight {
+  color: var(--accent); /* #F16D34 */
+  font-weight: 600;
+}
+
 
 
 /* Scroll reveal for JS */
@@ -363,6 +399,57 @@ h2{
   transform: translateY(-2px);
   box-shadow: 0 12px 25px rgba(0,0,0,.18);
 }
+
+/* VALUES SECTION */
+/* VALUES SECTION */
+.values-section {
+  background: #f8f9fc;
+  width: 100%;
+}
+
+.values-intro {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 16px;
+  color: #555;
+}
+
+/* Grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Cards */
+.value-card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid var(--accent);
+  opacity: 1;
+  visibility: visible;
+}
+
+.value-card h3 {
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.value-card p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Hover effect (professional, subtle) */
+.value-card:hover {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
