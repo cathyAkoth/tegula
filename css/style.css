@@ -450,6 +450,66 @@ h2{
   transition: 0.3s ease;
 }
 
+/* PAGE HERO */
+.page-hero {
+  height: 60vh;
+  background: linear-gradient(
+      rgba(22, 30, 84, 0.85),
+      rgba(22, 30, 84, 0.85)
+    ),
+    url("https://images.unsplash.com/photo-1501183638710-841dd1904471?q=80&w=1920")
+      center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.page-hero-content {
+  max-width: 900px;
+  padding: 20px;
+}
+
+.page-hero h1 {
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.page-hero h1 span {
+  color: var(--accent); /* Orange highlight */
+}
+
+.page-hero p {
+  font-size: 18px;
+  opacity: 0.95;
+  font-weight: 400;
+}
+.reveal:not(.visible) {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .page-hero {
+    height: 50vh;
+  }
+
+  .page-hero h1 {
+    font-size: 36px;
+  }
+
+  .page-hero p {
+    font-size: 16px;
+  }
+}
+
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -865,8 +925,23 @@ footer {
 
 
 /* Reveal */
-.reveal{opacity:0;transform:translateY(40px);transition:1s}
-.reveal.visible{opacity:1;transform:none}
+/* Reveal — SAFE VERSION (does not hide content) */
+.reveal {
+  opacity: 1;
+  transform: none;
+  transition: 1s;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+/* === FORCE ABOUT CONTENT TO SHOW === */
+.section.fade-slide {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 
 /* Mobile */
 .hamburger{
