@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News | Tegula Real Estate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="nav">
+    <a href="index.html" class="logo">
+      <img src="images/logo (1).png" alt="Tegula Real Estate">
+    </a>
+
+    <ul class="menu center-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Our Projects</a></li>
+      <li><a href="news.html" class="active">News</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1>News</span></h1>
+    <p>Payment Plans & Happy Clients</p>
+  </div>
+</section>
+
+
+
+
+<!-- PAYMENT PLANS -->
+<section class="section">
+  <h2 class="center">Payment Plans</h2>
+
+  <div class="grid-3" id="paymentPlans">
+    <!-- Cards will be dynamically loaded from Google Sheet -->
+  </div>
+
+  <div class="center">
+    <button class="cta-btn" id="loadMorePlans">Load More</button>
+  </div>
+</section>
+
+<!-- HAPPY CLIENTS CAROUSEL -->
+<section class="section muted">
+  <h2 class="center">Happy Clients</h2>
+
+  <div class="testimonial-carousel">
+    <div class="testimonial-track" id="happyClients">
+      <!-- Client testimonial cards will be loaded here -->
+    </div>
+  </div>
+
+  <div class="testimonial-controls">
+    <button id="prevClient">&#10094;</button>
+    <button id="nextClient">&#10095;</button>
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer id="contact">
+  <div class="footer-container">
+    <!-- About / Company Info -->
+    <div class="footer-about">
+      <h3> Tegula Real Properties limited</h3>
+      <p>Your trusted partner in residential & commercial property across Uganda.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About Us</a></li>
+        
+        
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.tiktok.com/@tegula39" target="_blank">Tiktok</a>
+        <a href="#" target="_blank">Facebook</a>
+        <a href="#" target="_blank">X</a>
+        <a href="www.linkedin.com/in/tegula-real-properties-limited-7178b33a7" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026  Tegula Real Properties limited. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="js/news.js"></script>
+</body>
+</html>

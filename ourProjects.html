@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Projects | Tegula Real Estate</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="nav">
+    <a href="index.html" class="logo">
+      <img src="images/logo (1).png" alt="Tegula Real Estate">
+    </a>
+
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      
+      <li><a href="services.html">Services</a></li>
+      
+      <li><a href="projects.html" class="active">Our Projects</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+
+    <!-- Contact Button -->
+  <a href="#"  class="contact-btn">
+    <img src="https://img.icons8.com/ios-filled/24/ffffff/phone.png" alt="Call Icon" />
+   0393 191779
+  </a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <h1><span>Our</span> Projects</h1>
+    <p>Available Opportunities & Successfully Delivered Properties</p>
+  </div>
+</section>
+
+<!-- AVAILABLE PROJECTS -->
+<section class="section">
+  <h2 class="center">Available Projects</h2>
+
+  <!-- SEARCH & FILTERS -->
+  <div class="project-controls">
+
+    <div class="project-search">
+      <input
+        type="text"
+        id="searchAvailable"
+        placeholder="Search by name or location..."
+      />
+    </div>
+
+    <div class="project-filters">
+     <select id="typeFilter">
+  <option value="all">All Types</option>
+  <option value="Residential">Residential</option>
+  <option value="Commercial">Commercial</option>
+  <option value="Land">Land</option>
+  <option value="Apartment">Apartments</option>
+  <option value="Villa">Villa</option>
+  <option value="Office">Office</option>
+</select>
+
+<select id="statusFilter">
+  <option value="all">All Status</option>
+  <option value="For Sale">For Sale</option>
+  <option value="For Rent">For Rent</option>
+  <option value="Sold">Sold</option>
+  <option value="Reserved">Reserved</option>
+</select>
+
+    </div>
+
+  </div>
+
+  <!-- PROJECT GRID -->
+  <div class="grid-3" id="availableProjects"></div>
+
+  <!-- LOAD MORE -->
+  <div class="load-more-container">
+    <button class="load-more-btn" id="loadMoreAvailable">
+      Load More Properties
+    </button>
+  </div>
+</section>
+
+<!-- COMPLETED PROJECTS -->
+<section class="section muted">
+  <h2 class="center">Completed Projects</h2>
+
+  <div class="grid-3" id="completedProjects"></div>
+
+  <div class="load-more-container">
+    <button class="load-more-btn" id="loadMoreCompleted">
+      Load More Completed Projects
+    </button>
+  </div>
+</section>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+<script src="js/projects.js"></script>
+
+</body>
+</html>
