@@ -1359,3 +1359,146 @@ footer {
   }
 }
 
+
+
+/* FLOATING PROPERTY CARD */
+/* HERO */
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url('/images/hero2.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: flex-start; /* align to top */
+  justify-content: flex-start;
+  padding-left: 40px;
+  padding-top: 40px; /* move card upward */
+  color: #fff;
+}
+
+/* FLOATING PROPERTY CARD */
+.property-card {
+  position: absolute;
+  right: 2%;
+  top: 5%; /* move closer to header */
+  transform: translateY(0) translateX(100%); /* start off-screen */
+  width: 350px; /* bigger width */
+  background: linear-gradient(145deg, #FA8C00, #ff9b42);
+  color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  z-index: 2;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  padding: 10px;
+ 
+}
+
+/* Slide-in state */
+.property-card.show {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
+
+/* Property Image */
+.property-card img.property-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card content */
+.property-card .tag {
+  display: inline-block;
+  background: #e74c3c;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 12px 0;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.property-card h2 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #005096;
+}
+
+.property-card .features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.property-card .features li {
+  font-size: 14px;
+  background: rgba(255,255,255,0.2);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.property-card .price {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.property-card .cta-btn {
+  background: #fff;
+  color: var(--accent);
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.property-card .cta-btn:hover {
+  background: #f1f1f1;
+  transform: translateY(-2px);
+}
+
+
+/* Close Button */
+.property-card .close-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.3);
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+
+.property-card .close-btn:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+
+/* Responsive */
+@media(max-width:900px){
+  .property-card {
+    position: static;
+    transform: none;
+    width: 90%;
+    margin: 20px auto 0;
+  }
+  .property-card img.property-image {
+    height: 180px;
+  }
+}
