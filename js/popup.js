@@ -9,7 +9,7 @@ const properties = [
   },
   {
     tag: "For Sale",
-    title: "Stand Alone House",
+    title: "Stand Alone House - Kira",
     features: ["3 bedrooms"],
     price: "UGX 650M",
     link: "#",
