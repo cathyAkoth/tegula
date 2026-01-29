@@ -35,7 +35,8 @@ h2{
 /* Header */
 .header{
   position:sticky;top:0;background:#fff;z-index:50;
-  box-shadow:0 4px 20px rgba(0,0,0,.05)
+  box-shadow:0 4px 20px rgba(0,0,0,.05);
+  padding-top: 44px;
 }
 
 
@@ -1512,14 +1513,27 @@ footer {
 }
 /* Top Bar */
 /* Top Bar */
-/* Top Bar */
+/* Top Bar 
 .top-bar {
-  background: var(--accent); /* orange */
+  background: var(--accent); 
   color: #fff;
   font-size: 14px;
   padding: 8px 0;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+*/
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #FA8112;
+  z-index: 10000; /* higher than hero & card */
+}
+
+
+
+
 
 .top-bar .container {
   display: flex;
