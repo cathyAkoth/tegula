@@ -1389,19 +1389,19 @@ footer {
 .property-card {
   position: absolute;
   right: 2%;
-  top: 5%; /* move closer to header */
+  top: 7%; /* move closer to header */
   transform: translateY(0) translateX(100%); /* start off-screen */
   width: 330px; /* bigger width */
   background: linear-gradient(145deg, #FA8C00, #ff9b42);
   color: #fff;
-  border-radius: 6px;
+  border-radius: 9px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
   opacity: 0;
   transition: opacity 0.8s ease, transform 0.8s ease;
   z-index: 2;
   font-family: 'Poppins', sans-serif;
   overflow: hidden;
-  padding: 10px;
+  padding: 13px;
  
 }
 /* Slide-in state */
