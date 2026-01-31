@@ -1585,3 +1585,25 @@ footer {
   background: #FA6C00;
   color: #fff;
 }
+
+.static-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.static-images img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Mobile friendly */
+@media (max-width: 768px) {
+  .static-images {
+    grid-template-columns: 1fr;
+  }
+}

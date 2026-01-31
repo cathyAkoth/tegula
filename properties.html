@@ -5,31 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Properties | Tegula Real Estate</title>
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- PapaParse (CSV reader that handles commas correctly) -->
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
 </head>
 <body>
 
+<!-- ================= TOP BAR ================= -->
+<div class="top-bar">
+  <div class="container">
+    <span class="top-bar-info">
+      <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" class="location-icon">
+      <a href="https://www.google.com/maps/search/?api=1&query=Kyengera+opp+brac+bank" target="_blank">
+        Kyengera, Opp BRAC Bank & CBS Pewosa, Busiro (De' Pillarz Building)
+      </a>
+    </span>
+    <a href="#" class="cta-btn">Schedule a Visit</a>
+  </div>
+</div>
+
 <!-- ================= HEADER ================= -->
 <header class="header">
-  <nav class="nav">
+  <div class="nav">
     <div class="logo">
       <a href="index.html">
-        <img src="images/logo (1).png" alt="Tegula Real Estate">
+        <img src="images/logo (1).png" alt="Tegula Real Estate Logo">
       </a>
     </div>
 
-    <ul class="menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="ourProjects.html" class="active">Properties</a></li>
+    <ul class="menu" id="menu">
+      <li><a href="properties.html">Properties</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
     </ul>
 
-    <a href="contact.html" class="contact-btn">
-      <img src="images/phone.svg" alt="Call">
-      Contact
+    <a href="#" class="contact-btn">
+      <img src="https://img.icons8.com/ios-filled/24/ffffff/phone.png">
+      0393 191779
     </a>
-  </nav>
+
+    <button class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </header>
 
 <!-- ================= HERO ================= -->
@@ -40,75 +59,24 @@
   </div>
 </section>
 
-<!-- ================= PROPERTY SEARCH ================= -->
+<!-- ================= SEARCH ================= -->
 <section class="section muted">
   <div class="container center">
     <h2>Find Your Property</h2>
-
-    <div class="search-box" style="margin:auto">
-      <input type="text" placeholder="Location (e.g. Kyengera)">
-      <input type="text" placeholder="Property Type">
-      <button>Search</button>
+    <div class="search-box">
+      <input type="text" id="searchLocation" placeholder="Location">
+      <input type="text" id="searchType" placeholder="Property Type">
+      <button onclick="filterProperties()">Search</button>
     </div>
   </div>
 </section>
 
-<!-- ================= PROPERTY LISTINGS ================= -->
+<!-- ================= LISTINGS ================= -->
 <section class="section">
   <div class="container">
     <h2 class="center">Available Listings</h2>
-
-    <div class="grid-3">
-
-      <!-- Property Card -->
-      <div class="service-card">
-        <img src="images/property1.jpg" alt="Property">
-        <h3>Modern Apartment</h3>
-        <p><strong>Location:</strong> Kyengera</p>
-        <p><strong>Price:</strong> UGX 1,200,000 / month</p>
-        <p><strong>Type:</strong> For Rent</p>
-      </div>
-
-      <div class="service-card">
-        <img src="images/property2.jpg" alt="Property">
-        <h3>Family House</h3>
-        <p><strong>Location:</strong> Kira</p>
-        <p><strong>Price:</strong> UGX 350,000,000</p>
-        <p><strong>Type:</strong> For Sale</p>
-      </div>
-
-      <div class="service-card">
-        <img src="images/property3.jpg" alt="Property">
-        <h3>Prime Land</h3>
-        <p><strong>Location:</strong> Entebbe Road</p>
-        <p><strong>Price:</strong> UGX 180,000,000</p>
-        <p><strong>Type:</strong> Land for Sale</p>
-      </div>
-
-      <div class="service-card">
-        <img src="images/property4.jpg" alt="Property">
-        <h3>Office Space</h3>
-        <p><strong>Location:</strong> Kampala CBD</p>
-        <p><strong>Price:</strong> UGX 3,500,000 / month</p>
-        <p><strong>Type:</strong> Commercial Rent</p>
-      </div>
-
-      <div class="service-card">
-        <img src="images/property5.jpg" alt="Property">
-        <h3>Luxury Villa</h3>
-        <p><strong>Location:</strong> Munyonyo</p>
-        <p><strong>Price:</strong> UGX 950,000,000</p>
-        <p><strong>Type:</strong> For Sale</p>
-      </div>
-
-      <div class="service-card">
-        <img src="images/property6.jpg" alt="Property">
-        <h3>Rental Units</h3>
-        <p><strong>Location:</strong> Najjera</p>
-        <p><strong>Price:</strong> UGX 800,000 / month</p>
-        <p><strong>Type:</strong> For Rent</p>
-      </div>
-
+    <div class="grid-3" id="propertyGrid">
+      <!-- Google Sheet listings load here -->
     </div>
   </div>
 </section>
@@ -118,51 +86,43 @@
   <div class="container center">
     <h2>Can’t Find What You’re Looking For?</h2>
     <p>Let us help you source the perfect property tailored to your needs.</p>
-
-    <div class="cta-container">
-      <a href="contact.html" class="cta-button">Talk to Our Team</a>
-    </div>
+    <a href="contact.html" class="cta-button">Talk to Our Team</a>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
-<!-- Footer -->
-  <footer id="contact">
+<footer id="contact">
   <div class="footer-container">
-    <!-- About / Company Info -->
+
     <div class="footer-about">
-      <h3> Tegula Real Properties limited</h3>
+      <h3>Tegula Real Properties Limited</h3>
       <p>Your trusted partner in residential & commercial property across Uganda.</p>
     </div>
 
-    <!-- Quick Links -->
     <div class="footer-links">
       <h4>Quick Links</h4>
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="about.html">About Us</a></li>
-        
-        
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
 
-    <!-- Social Media -->
     <div class="footer-social">
       <h4>Follow Us</h4>
       <div class="social-icons">
         <a href="https://www.tiktok.com/@tegula39" target="_blank">Tiktok</a>
-        <a href="#" target="_blank">Facebook</a>
-        <a href="#" target="_blank">X</a>
-        <a href="www.linkedin.com/in/tegula-real-properties-limited-7178b33a7" target="_blank">LinkedIn</a>
-        <a href="#" target="_blank">Instagram</a>
+        <a href="https://www.facebook.com/profile.php?id=61587328346433" target="_blank">Facebook</a>
+        <a href="https://x.com/Tegularealprop" target="_blank">X</a>
+        <a href="https://www.instagram.com/tegula_real_properties" target="_blank">Instagram</a>
       </div>
     </div>
+
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026  Tegula Real Properties limited. All rights reserved.</p>
+    <p>© 2026 Tegula Real Properties Limited. All rights reserved.</p>
   </div>
 </footer>
 
@@ -170,6 +130,55 @@
 <a href="https://wa.me/256748922497" class="whatsapp-float" target="_blank">
   <img src="images/whatsapp.svg" alt="WhatsApp">
 </a>
+
+<!-- ================= SCRIPT ================= -->
+<script>
+const sheetURL =
+"https://docs.google.com/spreadsheets/d/e/2PACX-1vTCOyc82XL_vxkOAijXu-ssTbmfa6cB8xR_bSvBMe0JCndN2WJgdTiEbGLPISz32ZhPO1Cdc3IVqJEt/pub?gid=0&single=true&output=csv";
+
+let allProperties = [];
+
+Papa.parse(sheetURL, {
+  download: true,
+  header: true,
+  skipEmptyLines: true,
+  complete: function(results) {
+    allProperties = results.data;
+    renderProperties(allProperties);
+  }
+});
+
+function renderProperties(data) {
+  const grid = document.getElementById("propertyGrid");
+  grid.innerHTML = "";
+
+  data.forEach(p => {
+    const card = document.createElement("div");
+    card.className = "service-card";
+    card.innerHTML = `
+      <img src="${p['Image URL'] || 'images/default.jpg'}" alt="${p['Title']}">
+      <h3>${p['Title']}</h3>
+      <p><strong>Location:</strong> ${p['Location']}</p>
+      <p><strong>Price:</strong> ${p['Price']}</p>
+      <p><strong>Type:</strong> ${p['Type']}</p>
+    `;
+    grid.appendChild(card);
+  });
+}
+
+function filterProperties() {
+  const location = document.getElementById("searchLocation").value.toLowerCase();
+  const type = document.getElementById("searchType").value.toLowerCase();
+
+  const filtered = allProperties.filter(p =>
+    p['Location'].toLowerCase().includes(location) &&
+    p['Type'].toLowerCase().includes(type)
+  );
+
+  renderProperties(filtered);
+}
+</script>
+
 <script src="js/script.js"></script>
 </body>
 </html>
