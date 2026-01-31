@@ -22,7 +22,17 @@ const properties = [
     price: "Contact Us For Price",
     link: "#",
     image: "https://res.cloudinary.com/detidz8zk/image/upload/v1769344434/2024-01-02_ak9klm.webp"
+  },
+
+  {
+    tag: "For Rent",
+    title: "De' Pillaz  ",
+    features: ["commercial space"],
+    price: "Contact Us For Price",
+    link: "#",
+    image: "images/homepageimg.JPG"
   }
+
 ];
 
 const card = document.querySelector(".property-card");
