@@ -33,12 +33,31 @@ h2{
 }
 
 /* Header */
-.header{
-  position:sticky;top:0;background:#fff;z-index:50;
-  box-shadow:0 4px 20px rgba(0,0,0,.05);
-  padding-top: 44px;
+.header {
+  margin-top: 70px; /* same as top-bar height */
+  background: #fff;
+  z-index: 100;
 }
 
+
+:root {
+  --topbar-h: 70px;
+  --header-h: 64px;
+}
+
+.top-bar .schedule-btn {
+  white-space: nowrap;       /* prevents wrapping */
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-bar > * {
+  flex-shrink: 0;
+}
 
 /* Header Navigation */
 .nav {
@@ -1351,9 +1370,10 @@ footer {
   .nav{padding:14px 20px}
   .section{padding:60px 20px}
 }
+/*  
 @media(max-width:900px){
   .menu {
-    position: fixed; /* still slides from right */
+    position: fixed; /* still slides from right 
     top: 0;
     right: -100%;
     width: 260px;
@@ -1363,7 +1383,70 @@ footer {
     gap: 20px;
     transition: .4s;
     box-shadow: -10px 0 30px rgba(0,0,0,.1);
-    transform: none; /* remove centering on mobile */
+    transform: none; /* remove centering on mobile 
+  }
+}
+
+ */
+
+ @media (max-width: 900px) {
+  .menu {
+    display: none;
+    position: fixed;
+    top: 70px; /* 🔑 BELOW top bar */
+    right: 0;
+    width: 260px;
+    height: calc(100vh - 70px);
+    background: #fff;
+    flex-direction: column;
+    padding: 40px 20px;
+    gap: 20px;
+    box-shadow: -10px 0 30px rgba(0,0,0,.1);
+    z-index: 1000;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+@media (max-width: 900px) {
+  .menu {
+    display: none;            /* 🔑 hide by default */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 260px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 80px 20px;
+    gap: 20px;
+    box-shadow: -10px 0 30px rgba(0,0,0,.1);
+    z-index: 1000;
+  }
+
+  .menu.open {
+    display: flex;            /* 🔑 show ONLY when opened */
+  }
+
+  .hamburger {
+    display: flex;
   }
 }
 
@@ -1522,14 +1605,17 @@ footer {
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 */
-.top-bar {
+
+ .top-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #FA8112;
-  z-index: 10000; /* higher than hero & card */
+  height: 70px; /* IMPORTANT */
+  background: orange;
+  z-index: 1100;
 }
+
 
 
 

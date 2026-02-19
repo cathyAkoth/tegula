@@ -6,6 +6,16 @@ hamburger.addEventListener("click", () => {
   menu.classList.toggle("open");
 });
 
+ document.querySelectorAll("#menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      menu.classList.remove("open");
+    });
+  });
+
+
+
+
+
 // Carousel
 let index = 0;
 function slide(dir){
