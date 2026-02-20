@@ -159,31 +159,58 @@ function renderProperties(data) {
   const grid = document.getElementById("propertyGrid");
   grid.innerHTML = "";
 
-  data.forEach(p => {
+  data.forEach((p, index) => {
+
+    const images = p['Images']
+      ? p['Images'].split('|').map(img => img.trim())
+      : ['images/default.jpg'];
+
     const card = document.createElement("div");
     card.className = "service-card";
+
     card.innerHTML = `
-      <img src="${p['Image URL'] || 'images/default.jpg'}" alt="${p['Title']}">
+      <div class="property-carousel" data-index="${index}">
+        ${images.map((img, i) => `
+          <img src="${img}" class="carousel-img ${i === 0 ? 'active' : ''}">
+        `).join('')}
+        <button class="carousel-btn prev">&#10094;</button>
+        <button class="carousel-btn next">&#10095;</button>
+      </div>
+
       <h3>${p['Title']}</h3>
       <p><strong>Location:</strong> ${p['Location']}</p>
       <p><strong>Price:</strong> ${p['Price']}</p>
       <p><strong>Type:</strong> ${p['Type']}</p>
     `;
+
     grid.appendChild(card);
+  });
+
+  initCarousels();
+}
+
+
+
+function initCarousels() {
+  document.querySelectorAll(".property-carousel").forEach(carousel => {
+    let index = 0;
+    const images = carousel.querySelectorAll(".carousel-img");
+
+    carousel.querySelector(".next").addEventListener("click", () => {
+      images[index].classList.remove("active");
+      index = (index + 1) % images.length;
+      images[index].classList.add("active");
+    });
+
+    carousel.querySelector(".prev").addEventListener("click", () => {
+      images[index].classList.remove("active");
+      index = (index - 1 + images.length) % images.length;
+      images[index].classList.add("active");
+    });
   });
 }
 
-function filterProperties() {
-  const location = document.getElementById("searchLocation").value.toLowerCase();
-  const type = document.getElementById("searchType").value.toLowerCase();
 
-  const filtered = allProperties.filter(p =>
-    p['Location'].toLowerCase().includes(location) &&
-    p['Type'].toLowerCase().includes(type)
-  );
-
-  renderProperties(filtered);
-}
 </script>
 
 <script src="js/script.js"></script>
