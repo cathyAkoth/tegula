@@ -4,7 +4,7 @@ const properties = [
     title: "Apartments in Naalya",
     features: ["2 Beds", "1 Baths"],
     price: "UGX 1.5 - 2.6 M/month",
-    link: "#",
+    link: "/properties.html#propertyGrid",
     image: "https://res.cloudinary.com/detidz8zk/image/upload/v1769344446/DSC_0732_house_2_kdxwvy.webp"
   },
   {
@@ -12,7 +12,7 @@ const properties = [
     title: "Stand Alone House - Kira",
     features: ["3 bedrooms"],
     price: "UGX 650M",
-    link: "#",
+    link: "/properties.html#propertyGrid",
     image: "https://res.cloudinary.com/detidz8zk/image/upload/v1769344436/DSC_0012_kira_iyb2px.webp"
   },
   {
@@ -20,7 +20,7 @@ const properties = [
     title: "Wakiso Land",
     features: ["Range of Hectares"],
     price: "Contact Us For Price",
-    link: "#",
+    link: "/properties.html#propertyGrid",
     image: "https://res.cloudinary.com/detidz8zk/image/upload/v1769344434/2024-01-02_ak9klm.webp"
   },
 
@@ -29,7 +29,7 @@ const properties = [
     title: "De' Pillaz  ",
     features: ["commercial space"],
     price: "Contact Us For Price",
-    link: "#",
+    link: "/properties.html#propertyGrid",
     image: "images/homepageimg.JPG"
   }
 

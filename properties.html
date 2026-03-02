@@ -36,7 +36,7 @@
   <div class="nav">
     <div class="logo">
       <a href="index.html">
-        <img src="images/logo (1).png" alt="Tegula Real Estate Logo">
+        <img src="images/logotegula.png" alt="Tegula Real Estate Logo">
       </a>
     </div>
 
@@ -136,7 +136,17 @@
 <!-- Floating WhatsApp Button -->
 <a href="https://wa.me/256748922497" target="_blank" class="whatsapp-float">
     <img src="https://img.icons8.com/ios-filled/32/ffffff/whatsapp.png" alt="WhatsApp">
+
   </a>
+
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="image-modal">
+  <span class="close-modal">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+
 
 <!-- ================= SCRIPT ================= -->
 <script>
@@ -209,6 +219,34 @@ function initCarousels() {
     });
   });
 }
+
+
+
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("modalImage");
+const closeBtn = document.querySelector(".close-modal");
+
+// Open modal when image is clicked
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("carousel-img")) {
+    modal.style.display = "flex";
+    modalImg.src = e.target.src;
+  }
+});
+
+// Close modal on X click
+closeBtn.onclick = function () {
+  modal.style.display = "none";
+};
+
+// Close modal when clicking outside image
+modal.onclick = function (e) {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
+
 
 
 </script>
